@@ -1,0 +1,1251 @@
+<style>
+    .DB-select:focus-visible {
+        outline: 3px solid var(--navy-100) !important ;
+    }
+</style>
+<style>
+    .bg-veiledning {
+        background-color: #06a2b9;
+    }
+    .fa-file-arrow-down {
+        font-size: 50px;
+    }
+    .hero-veiledning {
+        color: #05426a;
+        font-weight: 600;
+        text-align: center;
+    }
+    .hero-hoydepunkter {
+        color: #ffffff;
+        font-weight: 600;
+        text-align: center;
+    }
+    .breadcrumbs i {
+        color: #05426a;
+    }
+    .center-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .breadcrumbs {
+        position: absolute;
+        z-index: 1;
+        color: var(--white);
+    }
+    section.container div.breadcrumbs * {
+        color: var(--white);
+    }
+</style>
+<div class="bg-veiledning" style="padding: 0">
+    <section class="container">
+        <div class="breadcrumbs">
+            <a href="https://www.forbrukerradet.no">Forsiden</a>
+            <i class="fa-regular fa-chevron-right"> </i>
+            <a href="https://www.forbrukerradet.no/forside/om-oss/"> Om oss </a>
+            <i class="fa-regular fa-chevron-right"> </i>
+            <a href="https://curiosity.azgw01.fbr.clh.no/forside/arsrapport-2023/">
+                Årsrapport 2022
+            </a>
+            <i class="fa-regular fa-chevron-right"> </i>
+            <span class="current">Høydepunkter</span>
+        </div>
+    </section>
+    <style>
+        .headerHero {
+            height: 700px;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+        }
+
+        .headerHeroImageWrap {
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .headerHeroImageWrap img {
+            object-fit: cover;
+            min-height: 100%;
+            object-position: bottom;
+        }
+
+        .headerHeroContent {
+            color: var(--white);
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            top: 300px;
+            padding: 0 20px;
+        }
+
+        .headerHeroContent h1 {
+            font-size: 4rem;
+        }
+        .headerHeroContent h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 500px) {
+            .headerHeroContent h1 {
+                font-size: 3rem;
+            }
+
+            .headerHeroContent h2 {
+                font-size: 2.4rem;
+            }
+
+            .headerHero {
+                height: 489px;
+            }
+
+            .headerHeroContent {
+                top: 152px;
+            }
+        }
+
+        @media screen and (max-width: 348px) {
+            .headerHeroContent h1 {
+                font-size: 2.7rem;
+            }
+            .headerHeroContent h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <section class="container headerHero">
+        <div class="headerHeroImageWrap">
+            <img src="https://storage02.forbrukerradet.no/media/2023/03/toppbilde2-1.jpg" alt="" />
+        </div>
+
+        <div class="headerHeroContent">
+            <h1 style="font-weight: 700">Høydepunkter</h1>
+            <h2>Aktiviteter og resultater</h2>
+            <a
+                href="https://storage02.forbrukerradet.no/media/2023/04/fr-arsrapport-2022-endelig-versjon.pdf"
+                style="width: 100%; max-width: 700px"
+                class="card card-link bg-white text-black-100 mt-8"
+            >
+                <div class="card-content DB-select">
+                    <p class="fs-h4">Last ned hele årsrapporten (PDF)</p>
+                </div>
+                <i class="fa-regular fa-arrow-down-to-bracket fa-2xl"></i>
+            </a>
+        </div>
+    </section>
+</div>
+
+<div class="bg-navy-100">
+    <section class="container-sm pt-12">
+        <div class="hero-veiledning" style="color: var(--white)">
+            <h2 class="fs-h1">Viktige forbrukerseiere</h2>
+            <h3 class="mt-8">
+                Forbrukerrådet jobber aktivt med å påvirke myndigheter og næringslivet i en
+                forbrukervennlig retning gjennom dialog, påvirkningsarbeid og utredninger.
+            </h3>
+        </div>
+    </section>
+    <section class="container" style="overflow: hidden">
+        <div class="smlTimeline">
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.querySelectorAll(".smlTimeLineTimeLine").forEach((line) => {
+                        line.addEventListener("scroll", (e) => {
+                            const scroll = e.target.closest(".smlTimeLineTimeLine").scrollLeft;
+                            const targets = e.target
+                                .closest(".smlTimeLineTimeLine")
+                                .querySelectorAll(".smlTimeLineTimeLineItem");
+                            const current = Math.round(
+                                scroll / ((window.screen.width < 1441 ? 150 : 200) + 10)
+                            );
+                            const boxes = targets[0]
+                                .closest(".smlTimeline")
+                                .querySelector(".smlTimelineInfoWrap")
+                                .querySelectorAll(".smlTimelineInfoItem");
+
+                            targets.forEach((i) => {
+                                i.querySelector(".smlTimeLineTimeLineItemSymbol").classList =
+                                    "smlTimeLineTimeLineItemSymbol";
+                            });
+
+                            boxes.forEach((b) => {
+                                b.classList = "smlTimelineInfoItem";
+                            });
+
+                            boxes[current].classList =
+                                "smlTimelineInfoItem smlTimelineInfoItemActive";
+
+                            targets[current].querySelector(
+                                ".smlTimeLineTimeLineItemSymbol"
+                            ).classList =
+                                "smlTimeLineTimeLineItemSymbol smlTimeLineTimeLineItemSymbolActive";
+                        });
+                    });
+                    document.querySelectorAll(".smlTimeLineTimeLineItem").forEach((item) => {
+                        item.tabIndex = 0;
+                        const target = item;
+                        const targetSibings = target
+                            .closest(".smlTimeLineTimeLine")
+                            .querySelectorAll(".smlTimeLineTimeLineItem");
+
+                        const indexOfTarget = Array.prototype.findIndex.call(
+                            targetSibings,
+                            (sibling) => sibling === target
+                        );
+                        item.ariaLabel = `
+                            ${
+                                target
+                                    .closest(".smlTimeline")
+                                    .querySelector(".smlTimelineInfoWrap")
+                                    .querySelectorAll(".smlTimelineInfoItemBoxDate")[indexOfTarget]
+                                    .innerHTML
+                            }. ${
+                            target
+                                .closest(".smlTimeline")
+                                .querySelector(".smlTimelineInfoWrap")
+                                .querySelectorAll(".smlTimelineInfoItemBoxHeader")[indexOfTarget]
+                                .innerHTML
+                        }. ${
+                            target
+                                .closest(".smlTimeline")
+                                .querySelector(".smlTimelineInfoWrap")
+                                .querySelectorAll("p")[indexOfTarget + 1].innerHTML
+                        }`
+                            .replace(/\s+/g, " ")
+                            .trim();
+                        item.addEventListener("focus", (e) => {
+                            target.closest(".smlTimeLineTimeLine").scrollLeft =
+                                indexOfTarget * ((window.screen.width < 1441 ? 150 : 200) + 10);
+                        });
+                    });
+                });
+            </script>
+            <style>
+                .smlTimeline {
+                    padding: 70px 0;
+                }
+
+                .smlTimelineInfoWrap {
+                    margin-bottom: 70px;
+                }
+
+                .smlTimelineInfoItem {
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    display: none;
+                }
+
+                .smlTimelineInfoItemActive {
+                    display: flex;
+                }
+
+                .smlTimelineInfoItemImgWrap img {
+                    object-fit: cover;
+                    min-height: 100%;
+                    max-width: 100%;
+                    height: 100%;
+                }
+
+                .smlTimelineInfoItemImgWrap {
+                    border-radius: 50%;
+                    width: 100%;
+                    max-width: 300px;
+                    overflow: hidden;
+                    margin-left: -15px;
+                    aspect-ratio: 1 / 1;
+                }
+
+                .smlTimelineInfoItemBox {
+                    background-color: var(--white);
+                    border-radius: var(--border-radius-md);
+                    padding: 20px;
+                    min-height: 230px;
+                    width: 100%;
+                    max-width: 400px;
+                    margin-right: -15px;
+                    z-index: 1;
+                }
+
+                .smlTimelineInfoItemBoxDate {
+                    text-align: end;
+                    font-size: 0.9rem;
+                    margin-bottom: 10px;
+                    width: 100%;
+                }
+
+                /* .smlTimelineInfoWrap a {
+                    margin-left: 307px;
+                    margin-top: -15px;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: center;
+                    width: fit-content;
+                    height: 20px;
+                } */
+
+                .smlTimelineInfoWrap a i {
+                    margin-left: 15px;
+                }
+
+                .lgTimelineScroll:hover * {
+                    opacity: 50%;
+                }
+
+                .smlTimeLineTimeLine {
+                    padding-left: 100px;
+                    padding-right: calc(100% - 300px);
+                    width: 100%;
+                    overflow: auto;
+                    display: flex;
+                    gap: 10px;
+                    position: relative;
+                    scroll-behavior: smooth;
+                }
+
+                .smlTimeLineTimeLineItem {
+                    min-width: 200px;
+                    display: grid;
+                    grid-template-rows: 50px auto auto;
+                    align-items: center;
+                    cursor: pointer;
+                }
+
+                .smlTimeLineTimeLineItem:hover .smlTimeLineTimeLineItemSymbol {
+                    background-color: #06a2b9;
+                }
+
+                .smlTimeLineTimeLineItem * {
+                    margin: 0 auto;
+                    width: fit-content;
+                }
+
+                .smlTimeLineTimeLineItemSymbol {
+                    background-color: none;
+                    border: 2px solid var(--cyan-100);
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var(--navy-100);
+                    z-index: 1;
+                }
+
+                .smlTimeLineTimeLineItemSymbol i {
+                    color: var(--white);
+                }
+
+                .smlTimeLineTimeLineItem h3 {
+                    color: var(--white);
+                    font-size: 0.9rem;
+                }
+
+                .smlTimeLineTimeLineItemDate {
+                    color: #97f4fc;
+                    font-size: 0.9rem;
+                    margin-top: 8px;
+                }
+
+                .smlTimelineLine {
+                    position: absolute;
+                    width: 1039px;
+                    height: 2px;
+                    background-color: var(--cyan-100);
+                    top: 25px;
+                    left: 200px;
+                }
+
+                .smlTimeLineTimeLineItemSymbolActive {
+                    background-color: var(--cyan-100);
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1;
+                }
+
+                .smlTimeLineTimeLineItemSymbolActive i {
+                    color: var(--navy-100);
+                }
+
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                .smlTimeLineTimeLine::-webkit-scrollbar {
+                    display: none;
+                }
+
+                /* Hide scrollbar for IE, Edge and Firefox */
+                .smlTimeLineTimeLine {
+                    -ms-overflow-style: none; /* IE and Edge */
+                    scrollbar-width: none; /* Firefox */
+                }
+
+                .site {
+                    display: block !important;
+                }
+
+                /* media querie xl */
+                @media screen and (max-width: 1440px) {
+                    .smlTimeLineTimeLine {
+                        padding-left: 60px;
+                        padding-right: calc(100% - 210px);
+                    }
+
+                    .smlTimelineLine {
+                        left: 120px;
+                        width: 806px;
+                    }
+                    .smlTimeLineTimeLineItem {
+                        min-width: 150px;
+                    }
+                }
+
+                /* media querie sm */
+                @media screen and (max-width: 768px) {
+                    .smlTimelineInfoItem {
+                        flex-direction: column-reverse;
+                    }
+
+                    .smlTimelineInfoItemImgWrap {
+                        margin: 0;
+                    }
+
+                    .smlTimelineInfoItemBox {
+                        margin: 0;
+                        margin-top: -40px;
+                    }
+
+                    .smlTimeLineTimeLine {
+                        padding-left: calc(50% - (150px / 2));
+                        padding-right: calc(50% - 63px);
+                    }
+
+                    .smlTimelineLine {
+                        left: 50%;
+                        width: 791px;
+                    }
+
+                    .smlTimelineInfoItemBox {
+                        height: fit-content;
+                        min-height: 230px;
+                    }
+                }
+
+                @media screen and (max-width: 433px) {
+                    .smlTimelineInfoWrap a {
+                        margin-left: 0;
+                        justify-content: flex-start;
+                    }
+                }
+            </style>
+            <div class="smlTimelineInfoWrap text-black-100">
+                <div
+                    class="smlTimelineInfoItem smlTimelineInfoItemActive"
+                    aria-hidden="true"
+                    ref="strømmavtaller"
+                >
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate" aria="">Mai 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Personvernpris</h3>
+                            <p>
+                                I mai fikk Forbrukerrådet «International Privacy Champion Award» av
+                                den amerikanske rettighetsorganisasjonen EPIC for arbeidet med å
+                                forby overvåkningsbasert markedsføring.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img
+                            src=" https://storage02.forbrukerradet.no/media/2023/03/01-personvernpris-1x1-1.jpg"
+                            alt="Forbrukerrådet mottar prisen «International Privacy Champion Award».Foto"
+                        />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">Juni 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Gebyrer</h3>
+                            <p>
+                                Rapporten fra Forbrukerrådet om høye gebyrer i helsetjenesten er
+                                bakgrunnen for at Helse- og omsorgsdepartementet har bedt om en
+                                utredning av behovet for lovendringer eller andre tiltak som kan
+                                beskytte forbrukerne bedre mot slike gebyrer. Arbeidet skal gjøres
+                                på tvers av departementer.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img
+                            src="https://storage02.forbrukerradet.no/media/2023/03/02-gebyrer-1x1-adobestock-431778887.jpg"
+                            alt="En dame og en mann sitter og ser over regninger.Foto"
+                        />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">Juli 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Amazon-klage</h3>
+                            <p>
+                                Etter klage fra Forbrukerrådet må Amazon gjøre det enklere å
+                                kansellere videotjenesten Prime. En gjennomgang i 2021 viste hvordan
+                                Amazon bruker tekst og design for å gjøre det vanskelig å avslutte
+                                abonnementet. Sammen med flere forbrukerorganisasjoner klaget vi inn
+                                selskapet for handelspraksis i strid med markedsføringsloven, og vi
+                                vant frem.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img
+                            src="https://storage02.forbrukerradet.no/media/2023/03/03-amazon-1x1-adobestock-518526887-editorial-use-only.jpg"
+                            alt="Amazon prime video nettjenesten.Illustrasjon"
+                        />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">November 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Husleielov</h3>
+                            <p>
+                                Stortinget har bedt regjeringen sette ned et Husleielovutvalg, som
+                                skal gå gjennom Husleieloven for å styrke leietakernes rettigheter.
+                                Forbrukerrådet har i lang tid arbeidet for at regjeringen setter ned
+                                et slikt lovutvalg for å skape et trygt og stabilt leiemarked.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img
+                            src="https://storage02.forbrukerradet.no/media/2022/11/image-00e.jpg"
+                            alt="Lederne i Leieboerforeningen, LO og Forbrukerrådet feirer Husleieutvalg med kake.Foto"
+                        />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">November 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                1.november 2022 ble det innført endringer i
+                                prisopplysningsforskriften for strømavtaler. Nå skal det opplyses om
+                                pris, varighet og avtaletype før avtalen inngås. Endringene gjør det
+                                enklere for forbrukerne å orientere seg i strømmarkedet. Dette er en
+                                viktig seier for forbrukerne, og noe vi har jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img
+                            src="https://storage02.forbrukerradet.no/media/2023/03/05-stromavtaler-72-dpi-adobestock-181365342.jpg"
+                            alt="Høyspentmast.Foto"
+                        />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">Desember 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Prisdiskriminering</h3>
+                            <p>
+                                Forbrukerrådet har jobbet aktivt med et forbud mot usaklig
+                                prisdiskriminering fra leverandører med vesentlig markedsmakt i
+                                dagligvaresektoren. Regjeringen har sendt to alternative forslag på
+                                høring.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img
+                            src="https://storage02.forbrukerradet.no/media/2023/03/06-prisdiskriminering-1x1-01-img-1830-20.02.23.jpg"
+                            alt="En haug med mat varer ligger på et bor, det ligger en handlelapp på toppen.Foto"
+                        />
+                    </div>
+                </div>
+                <!-- <div class="smlTimelineInfoItem" aria-hidden="true" ref="strømmavtaller">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">1. november 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                8Nå skal det opplyses om pris, varighet og avtaletype før avtalen
+                                inngås. Dette er en viktig seier for forbrukerne, og noe vi har
+                                jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img src="https://picsum.photos/800" alt="loremPicsum" />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true" ref="strømmavtaller">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">1. november 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                7Nå skal det opplyses om pris, varighet og avtaletype før avtalen
+                                inngås. Dette er en viktig seier for forbrukerne, og noe vi har
+                                jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img src="https://picsum.photos/800" alt="loremPicsum" />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true" ref="strømmavtaller">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">1. november 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                6 Nå skal det opplyses om pris, varighet og avtaletype før avtalen
+                                inngås. Dette er en viktig seier for forbrukerne, og noe vi har
+                                jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img src="https://picsum.photos/800" alt="loremPicsum" />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true" ref="strømmavtaller">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">1. november 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                5Nå skal det opplyses om pris, varighet og avtaletype før avtalen
+                                inngås. Dette er en viktig seier for forbrukerne, og noe vi har
+                                jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img src="https://picsum.photos/800" alt="loremPicsum" />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true" ref="strømmavtaller">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">1. november 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                4Nå skal det opplyses om pris, varighet og avtaletype før avtalen
+                                inngås. Dette er en viktig seier for forbrukerne, og noe vi har
+                                jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img src="https://picsum.photos/800" alt="loremPicsum" />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true" ref="strømmavtaller">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">1. november 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                3Nå skal det opplyses om pris, varighet og avtaletype før avtalen
+                                inngås. Dette er en viktig seier for forbrukerne, og noe vi har
+                                jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img src="https://picsum.photos/800" alt="loremPicsum" />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true" ref="strømmavtaller">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">1. november 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                2Nå skal det opplyses om pris, varighet og avtaletype før avtalen
+                                inngås. Dette er en viktig seier for forbrukerne, og noe vi har
+                                jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img src="https://picsum.photos/800" alt="loremPicsum" />
+                    </div>
+                </div>
+                <div class="smlTimelineInfoItem" aria-hidden="true" ref="strømmavtaller">
+                    <div class="smlTimelineInfoItemBox">
+                        <article>
+                            <p class="smlTimelineInfoItemBoxDate">1. november 2022</p>
+                            <h3 class="smlTimelineInfoItemBoxHeader">Strømavtaler</h3>
+                            <p>
+                                1Nå skal det opplyses om pris, varighet og avtaletype før avtalen
+                                inngås. Dette er en viktig seier for forbrukerne, og noe vi har
+                                jobbet for i lengre tid.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="smlTimelineInfoItemImgWrap">
+                        <img src="https://picsum.photos/800" alt="loremPicsum" />
+                    </div>
+                </div> -->
+                <style>
+                    .smlTimelineRead {
+                        max-width: 666px;
+                        margin: 0 auto;
+                    }
+                    .smlTimelineRead a {
+                        display: flex;
+                        align-items: center;
+                    }
+                    @media screen and (max-width: 768px) {
+                        .smlTimelineRead {
+                            margin-top: 12px;
+                            max-width: 400px;
+                        }
+                    }
+                </style>
+                <div class="smlTimelineRead">
+                    <a
+                        href="https://storage02.forbrukerradet.no/media/2023/04/fr-arsrapport-2022-endelig-versjon.pdf#page=10"
+                        class="text-white"
+                    >
+                        Les mer i årsrapporten
+                        <i class="fa-regular fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="smlTimeLineTimeLine">
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol smlTimeLineTimeLineItemSymbolActive">
+                        <i class="fa-regular fa-lock-hashtag"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">Mai 2022</p>
+                    <p>Personvernpris</p>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-regular fa-money-bill-wave"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">Juni 2022</p>
+                    <h3>Gebyrer</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-sharp fa-regular fa-pen-to-square"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">Juli 2022</p>
+                    <h3>Amazon-klage</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-regular fa-house"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">November 2022</p>
+                    <h3>Husleielov</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-regular fa-bolt"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">November 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-regular fa-money-bill-wave"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">Desember 2022</p>
+                    <h3>Prisdiskriminering</h3>
+                </div>
+                <!-- <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">1. november 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">1. november 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">1. november 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">1. november 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">1. november 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">1. november 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">1. november 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div>
+                <div class="smlTimeLineTimeLineItem">
+                    <div class="smlTimeLineTimeLineItemSymbol">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <p class="smlTimeLineTimeLineItemDate">1. november 2022</p>
+                    <h3>Strømavtaler</h3>
+                </div> -->
+                <div class="smlTimelineLine"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="bg-veiledning">
+    <section class="container-sm mt-12">
+        <div class="hero-veiledning">
+            <h2 class="fs-h1">Veileding av forbrukerne</h2>
+            <h3 class="mt-8">
+                Antall henvendelser til vår veiledningstjeneste. Målt mot fjoråret og fordelt på
+                markeder
+            </h3>
+        </div>
+    </section>
+    <section class="container mt-8">
+        <div class="lgTimeline mt-12">
+            <script>
+                // makes shure document has laded before ading lintener
+                document.addEventListener("DOMContentLoaded", function () {
+                    // selsects all the arrows
+                    document.querySelectorAll(".lgTimelineScroll").forEach((arrow) => {
+                        // adds tabindex to the arrows
+                        arrow.tabIndex = 0;
+                        // adds listener to all the arrows
+                        arrow.addEventListener("keydown", (e) => {
+                            if (e.keyCode == 13) {
+                                e.target.click();
+                            }
+                        });
+                        arrow.addEventListener("click", (e) => {
+                            const timeline = e.target
+                                .closest(".lgTimeline")
+                                .querySelector(".lgTimelineItemWrap");
+
+                            // if ists the left arrow scroll left, else scroll right
+                            if (e.target.closest(".lgTimelineScroll").id == "left") {
+                                // if its already scroled max to the left set it to max right
+                                if (timeline.scrollLeft == 0) {
+                                    timeline.scrollLeft =
+                                        timeline.scrollWidth - timeline.clientWidth;
+                                } else {
+                                    timeline.scrollBy(-timeline.clientWidth, 0);
+                                }
+                            } else {
+                                // if its already scroled max to the right set it to max left
+                                if (
+                                    timeline.scrollLeft >=
+                                    timeline.scrollWidth - timeline.clientWidth
+                                ) {
+                                    timeline.scrollLeft = 0;
+                                } else {
+                                    timeline.scrollBy(timeline.clientWidth, 0);
+                                }
+                            }
+                        });
+                    });
+                });
+            </script>
+            <style>
+                .bg-veiledning {
+                    background-color: #06a2b9;
+                    padding-top: 10px;
+                    padding-bottom: 50px;
+                }
+                .fa-file-arrow-down {
+                    font-size: 50px;
+                }
+                .hero-veiledning {
+                    color: #05426a;
+                    font-weight: 600;
+                    text-align: center;
+                }
+                .hero-hoydepunkter {
+                    color: #ffffff;
+                    font-weight: 600;
+                    text-align: center;
+                }
+
+                .tema p {
+                    color: #05426a;
+                    font-size: 1.5rem;
+                }
+                .lenke-blue {
+                    color: #05426a;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    font-weight: 600;
+                    margin-top: 50px;
+                }
+                .lenke-blue a {
+                    color: #05426a;
+                    font-weight: 600;
+                }
+                .lenke-blue i {
+                    color: #05426a;
+                    font-weight: 600;
+                }
+                /* large timline top item */
+                .lgTimeline {
+                    position: relative;
+                }
+
+                /* makes all font awsome symboles have a collor */
+                .lgTimeline i {
+                    color: #05426a;
+                }
+                .breadcrumbs i {
+                    color: #05426a;
+                }
+                /* large timeline, wrapp for items  */
+                .lgTimelineItemWrap {
+                    width: calc(100% - 93px);
+                    display: flex;
+                    overflow-x: auto;
+                    scroll-behavior: smooth;
+                    margin: 0 auto;
+                }
+
+                /* large timeline, wrapp for items  */
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                .lgTimelineItemWrap::-webkit-scrollbar {
+                    display: none;
+                }
+
+                /* large timeline, wrapp for items  */
+                /* Hide scrollbar for IE, Edge and Firefox */
+                .lgTimelineItemWrap {
+                    -ms-overflow-style: none; /* IE and Edge */
+                    scrollbar-width: none; /* Firefox */
+                }
+
+                /* items in large timeline */
+                .lgTimelineItem {
+                    min-width: calc(100% / 5);
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 0 5px;
+                }
+
+                /* styles the font awsome symboles in the large timeline item */
+                .lgTimelineItem i {
+                    font-size: 80px;
+                    margin-bottom: 50px;
+                }
+
+                /* styles the value of large timeline item (the big %) */
+                .lgTimelineItem .lgTimelineValue {
+                    font-size: 4.5rem;
+                    margin-bottom: 30px;
+                    font-weight: bold;
+                    color: #ffffff;
+                }
+
+                /* styles the total from larege timeline item (the text/ topic) */
+                .lgTimelineItem .lgTimelineItemTotal {
+                    font-size: 2rem;
+                    margin-top: 20px;
+                    margin-bottom: 50px;
+                    color: #05426a;
+                    font-weight: 600;
+                }
+
+                /* large timeline arrows */
+                .lgTimeline .lgTimelineScroll {
+                    position: absolute;
+                    height: 60px;
+                    transform-origin: center;
+                    width: 60px;
+                    top: 20px;
+                }
+                .lgTimeline .lgTimelineScroll i {
+                    font-size: 60px;
+                    cursor: pointer;
+                }
+
+                /* first (left) large timeline arrow */
+                .lgTimeline .lgTimelineScroll:first-of-type {
+                    left: 30px;
+                }
+
+                /* last (right) large timeline arrow */
+                .lgTimeline .lgTimelineScroll:last-of-type {
+                    right: 30px;
+                    display: flex;
+                    flex-direction: row-reverse;
+                }
+
+                /* media querie lg */
+                @media screen and (max-width: 1280px) {
+                    .lgTimelineItem {
+                        min-width: calc(100% / 4);
+                    }
+                }
+
+                /* media querie md */
+                @media screen and (max-width: 1024px) {
+                    .lgTimelineItem {
+                        min-width: calc(100% / 3);
+                    }
+                }
+
+                /* media querie sm */
+                @media screen and (max-width: 768px) {
+                    .lgTimelineItem {
+                        min-width: calc(100% / 2);
+                    }
+                }
+
+                /* media querie xs */
+                @media screen and (max-width: 576px) {
+                    .lgTimelineItem {
+                        min-width: calc(100% / 1);
+                    }
+                }
+            </style>
+
+            <div class="lgTimelineScroll DB-select" id="left">
+                <i class="fa-regular fa-chevron-left"></i>
+            </div>
+            <div class="lgTimelineItemWrap">
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-car-side"></i>
+                    <div class="lgTimelineValue"><p>-6%</p></div>
+                    <div class="tema">
+                        <p>Bruktbil</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>5 214</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-bolt"></i>
+                    <div class="lgTimelineValue"><p>+70%</p></div>
+                    <div class="tema">
+                        <p>Strøm</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>3 450</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-house"></i>
+                    <div class="lgTimelineValue"><p>+8%</p></div>
+                    <div class="tema">
+                        <p>Husleie</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>2 994</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-plane"></i>
+                    <div class="lgTimelineValue"><p>+88%</p></div>
+                    <div class="tema">
+                        <p>Flyselskap</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>2 684</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-hammer"></i>
+                    <div class="lgTimelineValue"><p>+5%</p></div>
+                    <div class="tema">
+                        <p>Håndverktjenester</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>2 979</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-loveseat"></i>
+                    <div class="lgTimelineValue"><p>-2%</p></div>
+                    <div class="tema">
+                        <p>Møbler</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>1 782</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-clothes-hanger"></i>
+                    <div class="lgTimelineValue"><p>+35%</p></div>
+                    <div class="tema">
+                        <p>Klær og sko</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>1 703</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-paint-roller"></i>
+                    <div class="lgTimelineValue"><p>-15%</p></div>
+                    <div class="tema">
+                        <p>Byggevarer</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>1 485</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-sharp fa-regular fa-oven"></i>
+                    <div class="lgTimelineValue"><p>-26%</p></div>
+                    <div class="tema">
+                        <p>Hvitevarer</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>1 030</p></div>
+                </div>
+                <div class="lgTimelineItem">
+                    <i class="fa-regular fa-car"></i>
+                    <div class="lgTimelineValue"><p>+6%</p></div>
+                    <div class="tema">
+                        <p>Nybil</p>
+                    </div>
+                    <div class="lgTimelineItemTotal"><p>996</p></div>
+                </div>
+            </div>
+            <div class="lgTimelineScroll DB-select">
+                <i class="fa-regular fa-chevron-right"></i>
+            </div>
+        </div>
+        <div class="lenke-blue">
+            <a
+                href="https://storage02.forbrukerradet.no/media/2023/04/fr-arsrapport-2022-endelig-versjon.pdf#page=17"
+                class="DB-select"
+            >
+                Les mer i årsrapporten <i class="fa-regular fa-chevron-right"></i
+            ></a>
+        </div>
+    </section>
+</div>
+
+<div class="bg-navy-100 DT">
+    <style>
+        .DT-item:hover {
+            background-color: #ffffff2d;
+            text-decoration: none;
+        }
+
+        .DT-item div {
+            max-width: 200px;
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .DT-imgWrap {
+            height: 100px;
+            overflow: hidden;
+            aspect-ratio: 1.8/1;
+        }
+
+        .DT-imgWrap img {
+            object-fit: cover;
+        }
+
+        .DT-item div :nth-child(2) {
+            font-size: 3.2rem;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .DT-item div :nth-child(4) {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    </style>
+    <section class="container-sm pt-12">
+        <div class="hero-veiledning" style="color: var(--white)">
+            <h2 class="fs-h1">Digitale tjenester</h2>
+            <h3 class="mt-8">Brukertallene for våre tjenester per uke målt mot fjoråret</h3>
+        </div>
+    </section>
+
+    <section class="container mt-12 mb-12">
+        <div class="grid">
+            <a href="https://www.finansportalen.no" class="col-4 col-sm-12 DT-item">
+                <div>
+                    <div class="DT-imgWrap">
+                        <img
+                            src="https://storage02.forbrukerradet.no/media/2023/03/finansportalen-scaled.jpg"
+                            alt="Hjemmesiden til Finansportalen.Illustrasjon"
+                        />
+                    </div>
+                    <p>+2%</p>
+                    <p>Finasportalen</p>
+                    <p>24 640</p>
+                </div>
+            </a>
+            <a href="https://curiosity.azgw01.fbr.clh.no" class="col-4 col-sm-12 DT-item">
+                <div>
+                    <div class="DT-imgWrap">
+                        <img
+                            src="https://storage02.forbrukerradet.no/media/2023/03/frno-scaled.jpg"
+                            alt="Hjemmesiden til Forbrukerrådet.Illustrasjon"
+                        />
+                    </div>
+                    <p>+28%</p>
+                    <p>Forbrukerrådet.no</p>
+                    <p>24 560</p>
+                </div>
+            </a>
+            <a href="https://www.strompris.no" class="col-4 col-sm-12 DT-item">
+                <div>
+                    <div class="DT-imgWrap">
+                        <img
+                            src="https://storage02.forbrukerradet.no/media/2023/03/strompris-scaled.jpg"
+                            alt="Hjemmesiden til Strømpris.Illustrasjon"
+                        />
+                    </div>
+                    <p>+18%</p>
+                    <p>Strømpris.no</p>
+                    <p>52 900</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section
+        class="container pb-12"
+        style="display: flex; align-items: center; justify-content: center"
+    >
+        <a
+            href="https://storage02.forbrukerradet.no/media/2023/04/fr-arsrapport-2022-endelig-versjon.pdf#page=20"
+            class="text-white"
+            style="display: flex; align-items: center; justify-content: center; font-size: 1.5rem"
+        >
+            Les mer i årsrapporten
+            <i class="fa-regular fa-chevron-right text-white" style="padding-left: 10px"></i
+        ></a>
+    </section>
+</div>

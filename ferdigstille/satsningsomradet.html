@@ -1,0 +1,722 @@
+<style>
+    .bg-veiledning {
+        background-color: #06a2b9;
+    }
+    .fa-file-arrow-down {
+        font-size: 50px;
+    }
+    .hero-veiledning {
+        color: #05426a;
+        font-weight: 600;
+        text-align: center;
+    }
+    .hero-hoydepunkter {
+        color: #ffffff;
+        font-weight: 600;
+        text-align: center;
+    }
+    .breadcrumbs i {
+        color: #05426a;
+    }
+    .center-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        max-width: 155px;
+    }
+    .breadcrumbs {
+        position: absolute;
+        z-index: 1;
+    }
+    div.bg-veiledning div.breadcrumbs * {
+        color: var(--white);
+    }
+</style>
+<div class="bg-veiledning" style="padding: 0">
+    <section class="container">
+        <div class="breadcrumbs">
+            <a href="https://www.forbrukerradet.no">Forsiden</a
+            ><i class="fa-regular fa-chevron-right"></i>
+            <a href="https://www.forbrukerradet.no/forside/om-oss/"> Om oss </a>
+            <i class="fa-regular fa-chevron-right"> </i>
+            <a href="https://curiosity.azgw01.fbr.clh.no/forside/arsrapport-2023/">
+                Årsrapport 2022
+            </a>
+            <i class="fa-regular fa-chevron-right"></i>
+            <span class="current">Satsningsområder</span>
+        </div>
+    </section>
+    <style>
+        .headerHero {
+            height: 700px;
+            overflow: hidden;
+            padding: 0 !important;
+            position: relative;
+        }
+
+        .headerHeroImageWrap {
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .headerHeroImageWrap img {
+            object-fit: cover;
+            min-height: 100%;
+            object-position: bottom;
+        }
+
+        .headerHeroContent {
+            color: var(--white);
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            top: 300px;
+            padding: 0 20px;
+        }
+
+        .headerHeroContent h1 {
+            font-size: 4rem;
+        }
+        .headerHeroContent h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 615px) {
+            .headerHeroContent h1 {
+                font-size: 3rem;
+            }
+
+            .headerHeroContent h2 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .headerHero {
+                height: 489px;
+            }
+
+            .headerHeroContent {
+                top: 152px;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .headerHeroContent h1 {
+                font-size: 2.5rem;
+            }
+            .headerHeroContent h2 {
+                font-size: 2rem;
+            }
+        }
+        @media screen and (max-width: 348px) {
+            .headerHeroContent h1 {
+                font-size: 2.2rem;
+            }
+            .headerHeroContent h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <section class="container headerHero">
+        <div class="headerHeroImageWrap">
+            <img
+                src="https://storage02.forbrukerradet.no/media/2023/03/toppbilde3-72dpi.jpg"
+                alt="Paraply i firkant, internett symbol i firkant og et symbol av en spire i firkant plasert i en sirkel.Illustrasjon"
+            />
+        </div>
+
+        <div class="headerHeroContent">
+            <h1 style="font-weight: 700" aria-label="Satsningsområder, Vårt fokus i 2022">
+                Satsningsområder
+            </h1>
+            <h2 aria-hidden="true">Vårt fokus i 2022</h2>
+            <a
+                href="https://storage02.forbrukerradet.no/media/2023/04/fr-arsrapport-2022-endelig-versjon.pdf"
+                style="width: 100%; max-width: 700px"
+                class="card card-link bg-white text-black-100 mt-8"
+            >
+                <div class="card-content DB-select">
+                    <p class="fs-h4">Last ned hele årsrapporten (PDF)</p>
+                </div>
+                <i class="fa-regular fa-arrow-down-to-bracket fa-2xl"></i>
+            </a>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".verticalLineItem").forEach((i) => {
+            if (i.querySelector(".verticalLineItemText")) {
+                i.tabIndex = 0;
+                i.addEventListener("keydown", (e) => {
+                    if (e.key == "Enter") {
+                        e.target.click();
+                    }
+                });
+                i.querySelectorAll("p").forEach((i) => {
+                    i.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                    });
+                });
+
+                i.addEventListener("click", (e) => {
+                    const target = e.target.closest(".verticalLineItem");
+                    target
+                        .querySelector(".verticalLineItemText")
+                        .classList.toggle("verticalLineItemTextShow");
+                    const targets = target
+                        .closest(".verticalLine")
+                        .querySelectorAll(".verticalLineItem");
+
+                    const indexOfTarget = Array.prototype.findIndex.call(
+                        targets,
+                        (sibling) => sibling === target
+                    );
+                });
+            }
+        });
+    });
+</script>
+<style>
+    .verticalLine {
+        color: var(--white);
+        position: relative;
+    }
+
+    /* styles for the items in the line */
+    .verticalLineItem {
+        display: grid;
+        grid-template-columns: 91px 1fr;
+        cursor: pointer;
+    }
+
+    /* styling for the header on the item */
+    .verticalLineItem h3 {
+        height: 4rem;
+    }
+
+    /* styles for the symbols for the vertical lines */
+    /* .verticalLineItemSymbol {
+        display: flex;
+        height: 40px;
+        width: 40px;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid var(--brand-primary);
+        border-radius: 50%;
+        background-color: var(--navy-100);
+        z-index: 1;
+        margin-right: 30px;
+    } */
+
+    .verticalLineItemSymbol i {
+        color: var(--white);
+    }
+
+    /* styling for the text on colepsable items */
+    .verticalLineItemText p {
+        margin-top: 18px;
+    }
+    .verticalLineItemText {
+        max-height: 0;
+        overflow: hidden;
+        animation-delay: 0s;
+        transition: max-height 0.3s ease-out;
+        margin-top: -10px;
+    }
+
+    .verticalLineItemTextShow {
+        max-height: 500px;
+        animation-delay: 0s;
+        transition: max-height 0.3s ease-out;
+    }
+</style>
+<div class="bg-navy-100 pb-12 pt-12">
+    <section class="container-sm">
+        <section class="container-sm">
+            <div class="hero-hoydepunkter">
+                <img
+                    class="center-img"
+                    src="https://storage02.forbrukerradet.no/media/2023/03/konomisk-sarbarhet-72-dpi.png"
+                    alt="Paraply i firkant.Illustrasjon"
+                />
+                <h2 class="mt-8">Økonomisk sårbarhet</h2>
+            </div>
+        </section>
+
+        <style>
+            .lenke-light-blue {
+                color: #97f4fc;
+                font-size: 1.5rem;
+                text-align: center;
+                font-weight: 600;
+                margin-top: 50px;
+            }
+            .lenke-light-blue a {
+                color: #97f4fc;
+                font-weight: 600;
+            }
+            .lenke-light-blue i {
+                color: #97f4fc;
+                font-weight: 600;
+            }
+            .blue h3 {
+                color: #05426a;
+            }
+            .lenke-blue {
+                color: #05426a;
+                font-size: 1.5rem;
+                text-align: center;
+                font-weight: 600;
+                margin-top: 50px;
+            }
+            .lenke-blue a {
+                color: #05426a;
+                font-weight: 600;
+            }
+            .lenke-blue i {
+                color: #05426a;
+                font-weight: 600;
+            }
+
+            .verticalLine {
+                color: var(--white);
+                position: relative;
+            }
+
+            /* styles for the items in the line */
+
+            /* styling for the content in line item */
+            .verticalLineItemContent {
+                width: fit-content;
+                margin-bottom: 40px;
+                padding-top: 5px;
+            }
+
+            /* styling for the header on the item */
+            .verticalLineItem h3 {
+                height: 4rem;
+            }
+
+            /* styles for the symbols for the vertical lines */
+            .verticalLineItemSymbol {
+                display: flex;
+                height: 44px;
+                width: 44px;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid var(--brand-primary);
+                border-radius: 50%;
+                background-color: var(--navy-100);
+                z-index: 1;
+                margin-right: 30px;
+            }
+
+            .verticalLineItemSymbol i {
+                color: var(--white);
+            }
+
+            /* the line in the line */
+            .verticalLineLine {
+                height: calc(100% - 55px);
+                width: 2px;
+                background-color: var(--brand-primary);
+                position: absolute;
+                left: 20px;
+            }
+
+            /* styling for the text on colepsable items */
+            .verticalLineItemText {
+                max-height: 0;
+                overflow: hidden;
+                animation-delay: 0s;
+                transition: max-height 0.3s ease-out;
+                margin-top: -10px;
+            }
+
+            .verticalLineItemTextShow {
+                max-height: 500px;
+                animation-delay: 0s;
+                transition: max-height 0.3s ease-out;
+            }
+        </style>
+        <div class="verticalLine mt-10">
+            <div class="verticalLineLine"></div>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-money-bill-wave"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Prisoppgang og utsatte forbrukere</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            I 2022 har prisstigningen vært høyere enn inflasjonen i flere sentrale
+                            forbrukermarkeder som mat og strøm. Samtidig har rentenivået økt. Dette
+                            har ført til at mange forbrukere sliter med å betale for nødvendigheter
+                            som mat og strøm. Vi forventer at pris- og renteøkningen leder til flere
+                            inkassosaker for forbrukere som allerede har betalingsutfordringer. På
+                            toppen av prisstigningen vil sårbare forbrukere bli tynget av høye
+                            inkassogebyrer. I Norge må forbrukere betale opptil 50 ganger mer i
+                            gebyr enn i Sverige for krav som er like store. Vi mener de norske
+                            inkassogebyrene er for høye, og jobber for å redusere nivået på
+                            gebyrene. Vi har pekt på at det er behov for å få plass et
+                            inkassoregister, og vi har drevet aktiv veiledning av forbrukere med
+                            betalingsvansker.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Gjeldsutfordringer</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            1. januar 2023 trådte den nye finansavtaleloven i kraft. Dette er en lov
+                            som er viktig for forbrukerne fordi den vil gi et sterkt vern mot
+                            svindel og kortmisbruk. Den nye loven gir bankene større ansvar for lån
+                            de tilbyr forbrukere som ikke er i stand til å betjene det. Vi har vært
+                            aktive i politiske prosesser knyttet til gjeldsopptak, gjeldsinformasjon
+                            og offentlig gjeldsordning. Vi har bidratt til at økonomisk sårbarhet er
+                            på den politiske dagsordenen, ved at vi har arrangert konferanser og
+                            deltatt i høringer, både nasjonalt og internasjonalt. I november la vi
+                            frem en rapport som viser behovet for å videreføre utlånsforskriften for
+                            å forebygge gjeldsutfordringer hos forbrukerne. Utlånsforskriften setter
+                            krav til bankenes utlånspraksis, som å vurdere kundens samlede gjeld og
+                            lånets størrelse sammenlignet med boligens verdi.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-bolt"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Opprydding i strømmarkedet</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            De høye strømprisene har ført til større grad av forbrukersårbarhet i
+                            strømmarkedet. Vi har gjennom året jobbet med å bedre
+                            strømsalgsselskapenes praksis og sikre bedre informasjon til
+                            forbrukerne. Det har lenge vært for vanskelig å sammenligne strømavtaler
+                            og vite hva som er en kortvarig pris på avtalen, og hva som er en varig
+                            pris.
+                            <br /><br />1. november ble prisopplysningsforskriften og
+                            avregningsforskriften endret med blant annet strengere regler for
+                            markedsføring av strømavtaler og informasjon til forbrukere. Det skal nå
+                            opplyses om pris, varighet og avtaletype. Endringene vil gjøre det
+                            enklere for forbrukerne å orientere seg i strømmarkedet. For oss var
+                            dette en viktig seier og noe vi har jobbet for i lengre tid.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-arrow-up-right-dots"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Skyhøye fakturagebyrer</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            I en ny rapport dokumenterer vi hvordan forbrukerne betaler skyhøye
+                            fakturagebyrer i primærhelsetjenesten. Innføringen av betalingsapper og
+                            ny teknologi kan gjøre hverdagen enklere for forbrukerne. Men for mange
+                            er dette barrierer for å gjøre opp for seg. Det er ikke rimelig at
+                            forbrukerne skal betale opp mot 100 kroner i fakturagebyr. Derfor mener
+                            vi at fakturabransjen bør reguleres og at det bør innføres maksgrenser
+                            for hvor høyt et fakturagebyr kan være. På bakgrunn av rapporten har
+                            Helse- og omsorgsdepartementet bedt om at det settes i gang et arbeid på
+                            tvers av departementer med å utrede behovet for lovendringer eller andre
+                            tiltak som beskytter forbrukere bedre mot høye gebyrer.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-house"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Trygghet for leietakere</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            Vi har i lang tid arbeidet for at regjeringen setter ned et lovutvalg
+                            for å gjøre husleieloven til en forbrukerlov. Forbrukere som leier
+                            bolig, mangler stabilitet, frihet, privatliv og retten til å skape et
+                            eget hjem, ifølge rapporten vår om leiemarkedet fra 2021. <br /><br />I
+                            budsjettforhandlingene mellom regjeringspartiene og SV i høst ble det
+                            klart at «Stortinget ber regjeringen sette ned et Husleielovutvalg som
+                            går gjennom Husleieloven for å vurdere hvordan den kan styrke
+                            leietakernes rettigheter, sikre grunnleggende botrygghet og at loven
+                            samsvarer bedre med dagens situasjon på leiemarkedet».
+                        </p>
+                    </div>
+                </div>
+            </btn>
+        </div>
+
+        <div class="lenke-light-blue">
+            <a
+                href="https://storage02.forbrukerradet.no/media/2023/04/fr-arsrapport-2022-endelig-versjon.pdf#page=4"
+                >Les mer i årsrapporten <i class="fa-regular fa-chevron-right"></i
+            ></a>
+        </div>
+    </section>
+</div>
+
+<div class="bg-veiledning pb-12 pt-12">
+    <section class="container-sm">
+        <section class="container-sm">
+            <div class="hero-hoydepunkter">
+                <img
+                    class="center-img"
+                    src="https://storage02.forbrukerradet.no/media/2023/03/digital-sarbarhet-copy-72dpi.png"
+                    alt="Internett symbol i firkant.Illustrasjon"
+                />
+                <h2 class="mt-8" style="color: #05426a">Digital sårbarhet</h2>
+            </div>
+        </section>
+        <div class="verticalLine mt-10 blue">
+            <div class="verticalLineLine" style="background-color: #05426a"></div>
+            <btn class="verticalLineItem">
+                <div
+                    class="verticalLineItemSymbol"
+                    style="border: 2px solid #05426a; background-color: var(--navy-100)"
+                >
+                    <i class="fa-regular fa-lock"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Forbrukerrådet som årets «Privacy Champion»</h3>
+                    <div class="verticalLineItemText">
+                        <p class="text-black-100">
+                            I 2022 fikk Forbrukerrådet «International Privacy Champion Award» av den
+                            amerikanske rettighetsorganisasjonen EPIC for arbeidet med å forby
+                            overvåkningsbasert markedsføring. Overvåkningsbasert markeds føring
+                            bryter ikke bare med retten vår til privatliv, men gjør oss også sårbare
+                            for manipulasjon, diskriminering og svindel. Vi var medarrangører for
+                            arrangementet «Kan teknologigigantene tøyles» i Arendalsukas
+                            hovedprogram. Seminaret hadde som utgangspunkt den økende kritikken
+                            rettet mot hvordan store plattformselskaper manipulerer forbrukere og
+                            bryter personvernet. Sammen med toppolitikere, tilsyn og bransjen
+                            diskuterte vi hvor langt ny politikk kan og bør gå, og hvilke muligheter
+                            Norge har til å forme egen politikk. I juni la personvernkommisjonen,
+                            hvor Forbrukerrådet var representert, frem sin rapport.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div
+                    class="verticalLineItemSymbol"
+                    style="border: 2px solid #05426a; background-color: var(--navy-100)"
+                >
+                    <i class="fa-regular fa-paintbrush-pencil"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Kampen mot manipulerende design</h3>
+                    <div class="verticalLineItemText">
+                        <p class="text-black-100">
+                            Vi publiserte i desember en rapport om manipulerende design, med fokus
+                            på norske forbrukeres opplevelser av og meninger om manipulerende design
+                            på norske nettsider og apper. Rapporten baserte seg på en undersøkelse
+                            YouGov utførte for Forbrukerrådet. I undersøkelsen oppga åtte av ti at
+                            de har opplevd én eller flere negative konsekvenser av manipulerende
+                            design. Én av fire sier de har følt seg manipulert eller lurt. Rapporten
+                            inneholder også en oversikt over forholdet mellom norske lovbestemmelser
+                            og konkrete typer manipulerende design. Amazon må nå gjøre det enklere å
+                            si opp abonnementstjenesten Prime etter klage fra Forbrukerrådet.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div
+                    class="verticalLineItemSymbol"
+                    style="border: 2px solid #05426a; background-color: var(--navy-100)"
+                >
+                    <i class="fa-regular fa-treasure-chest"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Vil regulere forundringspakker i spill</h3>
+                    <div class="verticalLineItemText">
+                        <p class="text-black-100">
+                            Spillindustrien er en av de største underholdningsindustriene i verden
+                            og er langt mer innbringende enn både kinofilm og musikksalg. Over de
+                            siste to tiårene har kjøp i spill, ved salg av ekstra innhold inne i de
+                            enkelte spillene, blitt en av de største inntektskildene for
+                            spillselskapene. Vi publiserte i 2022 en rapport som viser at
+                            manipulerende design og aggressiv markedsføring er omfattende i såkalte
+                            loot boxes, det vil si kjøp av digitale forundringspakker i spill.
+                            Rapporten har fått forbrukerorganisasjoner over hele verden til å kreve
+                            regulering som sikrer trygge spillopplevelser for forbrukerne og hindrer
+                            sårbarhet i spillmarkedet.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+        </div>
+        <div class="lenke-blue">
+            <a
+                href="https://storage02.forbrukerradet.no/media/2023/04/fr-arsrapport-2022-endelig-versjon.pdf#page=4"
+                >Les mer i årsrapporten <i class="fa-regular fa-chevron-right"></i
+            ></a>
+        </div>
+    </section>
+</div>
+
+<div class="bg-navy-100 pb-12 pt-12">
+    <section class="container-sm">
+        <section class="container-sm">
+            <div class="hero-hoydepunkter">
+                <img
+                    class="center-img"
+                    src="https://storage02.forbrukerradet.no/media/2023/03/digital-sarbarhet-copy-2-72-dpi.png"
+                    alt="Symbol av en spire i firkant.Illustrasjon"
+                />
+                <h2 class="mt-8">Bærekraft</h2>
+            </div>
+        </section>
+        <div class="verticalLine mt-10">
+            <div class="verticalLineLine"></div>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-soap"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Grønnvaskingspris lansert</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            Norske forbrukere synes det er vanskelig å vite hva som er det mest
+                            bærekraftige valget, og mangel på informasjon er en av de viktigste
+                            årsakene til at mange ikke velger det mest bærekraftige alternativet. I
+                            tillegg markedsføres mange produkter og tjenester som bærekraftige -
+                            uten at de nødvendigvis er det. Derfor lanserte vi
+                            «Grønnvaskingsprisen». En bredt sammensatt jury vurderte 40 innsendte
+                            forslag opp mot kriteriene for prisen. Valget av vinneren falt på
+                            klesgiganten Zalando. Juryen begrunner valget blant annet med at
+                            nettbutikken bruker et bærekraftfilter som ikke gir et sannferdig bilde
+                            av miljøpåvirkningen for et ferdig produkt. Zalando har nå endret dette
+                            filteret i nettbutikken sin. Formålet med Grønnvaskingsprisen er å bidra
+                            til at kommunikasjon og markedsføring rundt bærekraft og samfunnsansvar
+                            blir mer etterrettelig. På den måten skal det bli enklere for
+                            forbrukerne å ta gode og bærekraftige valg.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-wrench"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Holdbare produkter som kan repareres</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            Forbrukerrådets mål er at vi har lover og regler som gjør det enkelt for
+                            forbrukerne å ta gode miljøvalg, og at mer miljøvennlige alternativer er
+                            tilgjengelige til en konkurransedyktig pris. Av økonomiske årsaker
+                            tvinges mange til å kjøpe nytt fremfor å reparere. Vi mener derfor at
+                            merverdiavgiften på reparasjoner bør fjernes. Sammen med
+                            bransjeorganisasjoner og miljøorganisasjoner har vi tatt dette opp med
+                            politiske myndigheter. I mai arrangerte vi et frokostseminar om hva EUs
+                            sirkulærøkonomipakke vil bety for forbrukerne. Forslaget om et regelverk
+                            for bærekraftige produkter står her sentralt. Hvis det skal bli enklere
+                            å ta gode valg som forbruker, må det stilles strengere krav til at
+                            produktene er holdbare og kan repareres
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-circle-info"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Produkttester for å styrke forbrukermakten</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            I 2022 etablerte vi Kontaktpunkt for forbruker makt i det grønne
+                            skiftet. Kontaktpunktet ble lansert som en ny tjeneste til norske
+                            forbrukere på Forbrukerkonferansen 28. september. Tjenesten tilbyr
+                            produkttester med fokus på bærekraft. Det overordnede målet med
+                            tjenesten er at det skal være lett å velge mer bærekraftig, også når du
+                            kjøper noe nytt. Testene undersøker ulike bærekraftaspekter ved
+                            produktene, for eksempel kvalitet, levetid og holdbarhet, helse- og
+                            miljø skadelige kjemikalier, energiforbruk og om produktet kan
+                            repareres. Tjenesten forteller hvilke produkter som er lite bærekraftige
+                            og lure å styre unna, og hvilke som er gode og mer bærekraftige kjøp. I
+                            flere av testene fra 2022 er kjente og dyre merkevarer testtapere, mens
+                            de rimeligste alternativene vinner på kvalitet og levetid.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-book-section"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Sirkulære forbrukerrettigheter</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            Et grønt skifte må legge til rette for at forbruket endres fra å eie til
+                            å leie, låne og lease mer. Vi har kartlagt vilkårene ved leie Foto:
+                            Adobe stock i viktige markeder og avdekket at forbrukerne jevnt over har
+                            svært dårlige rettigheter sammenlignet med når de kjøper et produkt. En
+                            kvalitativ undersøkelse gjennomført av Forbrukerrådet viser at leie ses
+                            på som et alternativ til å kjøpe der behovet er kortvarig, men det må
+                            være enkelt, trygt og til en riktig pris. Vi jobber derfor for at
+                            forbrukerne sikres samme nivå av rettigheter og beskyttelse i et
+                            tjenestesamfunn som ved kjøp av varer.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+            <btn class="verticalLineItem">
+                <div class="verticalLineItemSymbol">
+                    <i class="fa-regular fa-shirt"></i>
+                </div>
+                <div class="verticalLineItemContent">
+                    <h3>Overproduksjon av klær</h3>
+                    <div class="verticalLineItemText">
+                        <p>
+                            Sammen med Framtiden i våre hender ba vi Samfunnsøkonomisk analyse om å
+                            kartlegge omfanget av overproduksjon av klær på det norske markedet. Det
+                            førte til rapporten Overskudd av klær fra klesbransjen i Norge. Der
+                            kommer det blant annet frem at det årlig produseres minst 825 tonn
+                            overskuddsklær som kleskjedene i Norge ikke får solgt gjennom egne
+                            kanaler. Kleskjedene About You, Zalando og Hennes &amp; Mauritz nektet å
+                            utlevere tallene sine på overproduksjon. Hemmeligholdet gir grunn til å
+                            tro at volumet av usolgte klær sannsynligvis er betydelig større enn det
+                            vi kan dokumentere. Alle de tre kleskjedene ble klaget inn til
+                            Klagenemnda for miljøinformasjon fordi dette er viktig informasjon som
+                            kjedene er lovpålagt å utlevere. Nå må alle tre opplyse om hvor mye
+                            usolgte og overflødige klær de har fra det norske markedet i årene 2019,
+                            2020 og 2021.
+                        </p>
+                    </div>
+                </div>
+            </btn>
+        </div>
+
+        <div class="lenke-light-blue">
+            <a
+                href="https://storage02.forbrukerradet.no/media/2023/04/fr-arsrapport-2022-endelig-versjon.pdf#page=24"
+                >Les mer i årsrapporten <i class="fa-regular fa-chevron-right"></i
+            ></a>
+        </div>
+    </section>
+</div>

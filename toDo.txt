@@ -1,0 +1,11 @@
+[bilde], text og underskrif til ingerlise,
+toppen blanne mer med sdene,
+ha møte med tove om inhold i small timeline,
+[les mer i rapporten knapp litt større],
+[bredcrumbs kan ikke bli trykket på],
+manglende padding på hovedsiden(?),
+[manglene skalering på text],
+sml timeline scrol bugg(?)
+lenker til sidene (portalene)
+margin på les mer på smlTimeLine
+smlTimeline ruller ikke helt ut på mobil

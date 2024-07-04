@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; width: 100%">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Veiledning av forbrukerne</title>
+        <link rel="stylesheet" href="../index.css" />
+        <!-- <link rel="stylesheet" href="./Satsningsområder.css" /> -->
+        <!-- <script src="./Satsningsområder.js"></script> -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://storage.forbrukerradet.no/static-assets/v1.1.4/vendor.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://storage.forbrukerradet.no/static-assets/v1.1.4/main.css"
+        />
+        <script
+            type="module"
+            src="https://storage.forbrukerradet.no/static-assets/v1.1.4/main.js"
+            defer
+        ></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://storage.forbrukerradet.no/static-assets/v1.1.4/root.css"
+        />
+        <script src="https://kit.fontawesome.com/246cc2bd70.js" crossorigin="anonymous"></script>
+    </head>
+    <body style="height: 100%; width: 100%" class="bg-navy-100">
+        <div class="site">
+            <div class="bg-navy-100 text-black-100">
+                <section class="container mt-12">
+                    <!--  -->
+                    <div class="verticalLine">
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                document.querySelectorAll(".verticalLineItem").forEach((i) => {
+                                    if (i.querySelector(".verticalLineItemText")) {
+                                        i.addEventListener("click", (e) => {
+                                            const target = e.target.closest(".verticalLineItem");
+                                            target
+                                                .querySelector(".verticalLineItemText")
+                                                .classList.toggle("verticalLineItemTextShow");
+                                            const targets = target
+                                                .closest(".verticalLine")
+                                                .querySelectorAll(".verticalLineItem");
+
+                                            const indexOfTarget = Array.prototype.findIndex.call(
+                                                targets,
+                                                (sibling) => sibling === target
+                                            );
+                                        });
+                                    }
+                                });
+                            });
+                        </script>
+                        <style>
+                            .verticalLine {
+                                color: var(--white);
+                                position: relative;
+                            }
+
+                            /* styles for the items in the line */
+                            .verticalLineItem {
+                                display: flex;
+                            }
+
+                            /* styling for the content in line item */
+                            .verticalLineItemContent {
+                                width: fit-content;
+                                margin-bottom: 40px;
+                            }
+
+                            /* styling for the header on the item */
+                            .verticalLineItem h3 {
+                                height: 4rem;
+                            }
+
+                            /* styles for the symbols for the vertical lines */
+                            .verticalLineItemSymbol {
+                                display: flex;
+                                height: 30px;
+                                width: 30px;
+                                justify-content: center;
+                                align-items: center;
+                                border: 2px solid var(--brand-primary);
+                                border-radius: 50%;
+                                background-color: var(--navy-100);
+                                z-index: 1;
+                                margin-right: 30px;
+                            }
+
+                            .verticalLineItemSymbol i {
+                                color: var(--white);
+                            }
+
+                            /* the line in the line */
+                            .verticalLineLine {
+                                height: calc(100% - 35px);
+                                width: 2px;
+                                background-color: var(--brand-primary);
+                                position: absolute;
+                                left: 14px;
+                            }
+
+                            /* styling for the text on colepsable items */
+                            .verticalLineItemText {
+                                max-height: 0;
+                                overflow: hidden;
+                                animation-delay: 0s;
+                                transition: max-height 0.3s ease-out;
+                                margin-top: -10px;
+                            }
+
+                            .verticalLineItemTextShow {
+                                max-height: 500px;
+                                animation-delay: 0s;
+                                transition: max-height 0.3s ease-out;
+                            }
+                        </style>
+                        <div class="verticalLineLine"></div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Prisoppgang og utsatte forbrukere</h3>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticalLineItem">
+                            <div class="verticalLineItemSymbol">
+                                <i class="fa-regular fa-pen-to-square fa-sm"></i>
+                            </div>
+                            <div class="verticalLineItemContent">
+                                <h3>Gjeldsutfordringer</h3>
+                                <div class="verticalLineItemText">
+                                    <p>
+                                        1. januar 2023 trådte den nye finansavtaleloven i kraft.
+                                        Dette er en lov som er viktig for forbrukerne fordi den vil
+                                        gi et sterkt vern mot svindel og kortmisbruk. Den nye loven
+                                        gir bankene større ansvar for lån de tilbyr forbrukere som
+                                        ikke er i stand til å betjene det. Vi har vært aktive i
+                                        politiske prosesser knyttet til gjeldsopptak,
+                                        gjeldsinformasjon og offentlig gjeldsordning. Vi har bidratt
+                                        til at økonomisk sårbarhet er på den politiske dagsordenen,
+                                        ved at vi har arrangert konferanser og deltatt i høringer,
+                                        både nasjonalt og internasjonalt. I november la vi frem en
+                                        rapport som viser behovet for å videreføre utlånsforskriften
+                                        for å forebygge gjeldsutfordringer hos forbrukerne.
+                                        Utlånsforskriften setter krav til bankenes utlånspraksis,
+                                        som å vurdere kundens samlede gjeld og lånets størrelse
+                                        sammenlignet med boligens verdi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+.verticalLine {
+    color: var(--white);
+    position: relative;
+}
+
+/* styles for the items in the line */
+.verticalLineItem {
+    display: flex;
+}
+
+/* styling for the content in line item */
+.verticalLineItemContent {
+    width: fit-content;
+    margin-bottom: 40px;
+}
+
+/* styling for the header on the item */
+.verticalLineItem h3 {
+    height: 4rem;
+}
+
+/* styles for the symbols for the vertical lines */
+.verticalLineItemSymbol {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--brand-primary);
+    border-radius: 50%;
+    background-color: var(--navy-100);
+    z-index: 1;
+    margin-right: 30px;
+}
+
+.verticalLineItemSymbol i {
+    color: var(--white);
+}
+
+/* the line in the line */
+.verticalLineLine {
+    height: calc(100% - 35px);
+    width: 2px;
+    background-color: var(--brand-primary);
+    position: absolute;
+    left: 14px;
+    /* height culd be sett by js when the last item is toggled to not have to deal with */
+    /* the last part past the last symbol, this culd be done by setting the height to  */
+    /* 100% - the height of the last test, and som num  */
+}
+
+/* styling for the text on colepsable items */
+.verticalLineItemText {
+    max-height: 0;
+    overflow: hidden;
+    animation-delay: 0s;
+    transition: max-height 0.3s ease-out;
+    margin-top: -10px;
+}
+
+.verticalLineItemTextShow {
+    max-height: 500px;
+    animation-delay: 0s;
+    transition: max-height 0.3s ease-out;
+}

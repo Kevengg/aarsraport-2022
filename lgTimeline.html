@@ -1,0 +1,235 @@
+<div class="lgTimeline">
+    <script>
+        // makes shure document has laded before ading lintener
+        document.addEventListener("DOMContentLoaded", function () {
+            // selsects all the arrows
+            document.querySelectorAll(".lgTimelineScroll").forEach((arrow) => {
+                // adds listener to all the arrows
+                arrow.addEventListener("mousedown", (e) => {
+                    const timeline = e.target
+                        .closest(".lgTimeline")
+                        .querySelector(".lgTimelineItemWrap");
+
+                    // if ists the left arrow scroll left, else scroll right
+                    if (e.target.closest(".lgTimelineScroll").id == "left") {
+                        // if its already scroled max to the left set it to max right
+                        if (timeline.scrollLeft == 0) {
+                            timeline.scrollLeft = timeline.scrollWidth - timeline.clientWidth;
+                        } else {
+                            timeline.scrollBy(-timeline.clientWidth, 0);
+                        }
+                    } else {
+                        // if its already scroled max to the right set it to max left
+                        if (timeline.scrollLeft >= timeline.scrollWidth - timeline.clientWidth) {
+                            timeline.scrollLeft = 0;
+                        } else {
+                            timeline.scrollBy(timeline.clientWidth, 0);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        /* large timline top item */
+        .lgTimeline {
+            position: relative;
+        }
+
+        /* makes all font awsome symboles have a collor */
+        .lgTimeline i {
+            color: black;
+        }
+
+        /* large timeline, wrapp for items  */
+        .lgTimelineItemWrap {
+            width: calc(100% - 160px);
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            margin: 0 auto;
+        }
+
+        /* large timeline, wrapp for items  */
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .lgTimelineItemWrap::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* large timeline, wrapp for items  */
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .lgTimelineItemWrap {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        /* items in large timeline */
+        .lgTimelineItem {
+            min-width: calc(100% / 5);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 5px;
+        }
+
+        /* styles the font awsome symboles in the large timeline item */
+        .lgTimelineItem i {
+            font-size: 100px;
+            margin-bottom: 50px;
+        }
+
+        /* styles the value of large timeline item (the big %) */
+        .lgTimelineItem .lgTimelineValue {
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        /* styles the total from larege timeline item (the text/ topic) */
+        .lgTimelineItem .lgTimelineItemTotal {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        /* large timeline arrows */
+        .lgTimeline .lgTimelineScroll {
+            position: absolute;
+            height: 60px;
+            transform-origin: center;
+            width: 60px;
+            top: 20px;
+        }
+        .lgTimeline .lgTimelineScroll i {
+            font-size: 60px;
+            cursor: pointer;
+        }
+
+        /* first (left) large timeline arrow */
+        .lgTimeline .lgTimelineScroll:first-of-type {
+            left: 30px;
+        }
+
+        /* last (right) large timeline arrow */
+        .lgTimeline .lgTimelineScroll:last-of-type {
+            right: 30px;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        /* media querie lg */
+        @media screen and (max-width: 1280px) {
+            .lgTimelineItem {
+                min-width: calc(100% / 4);
+            }
+        }
+
+        /* media querie md */
+        @media screen and (max-width: 1024px) {
+            .lgTimelineItem {
+                min-width: calc(100% / 3);
+            }
+        }
+
+        /* media querie sm */
+        @media screen and (max-width: 768px) {
+            .lgTimelineItem {
+                min-width: calc(100% / 2);
+            }
+        }
+
+        /* media querie xs */
+        @media screen and (max-width: 576px) {
+            .lgTimelineItem {
+                min-width: calc(100% / 1);
+            }
+        }
+    </style>
+    <div class="lgTimelineScroll" id="left" key="left">
+        <i class="fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="lgTimelineItemWrap">
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>hi-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>there-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+        <div class="lgTimelineItem">
+            <i class="fa-solid fa-car"></i>
+            <div class="lgTimelineValue"><p>-6%</p></div>
+            <div>
+                <h3>Bruktbil</h3>
+            </div>
+            <div class="lgTimelineItemTotal"><p>5 214</p></div>
+        </div>
+    </div>
+    <div class="lgTimelineScroll">
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
+</div>

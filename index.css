@@ -1,0 +1,72 @@
+:root {
+    --main-f_size: 16px;
+    --main-f_family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --line-height: 1.5;
+    --site-width: 1500px;
+}
+
+/*resets*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    font-family: var(--main-f_family);
+    overflow-x: visible;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--site-backround-color);
+    font-size: var(--main-f_size);
+    font-family: var(--main-f_family);
+    color: var(--site-text-color);
+}
+
+/* helper classes */
+.bg-brand-primary {
+    background-color: #00abc4;
+}
+
+/* tools */
+.senterWrap {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: 0;
+    z-index: 10;
+    margin: 0 auto;
+}
+
+.senter {
+    background-color: #000;
+    width: 0.1px;
+    z-index: 100;
+    height: 10000px;
+}
+
+.maxSideWrap {
+    width: 100vw;
+    display: flex;
+    height: 0;
+    z-index: 10;
+    align-self: center;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.maxSide {
+    background-color: #000;
+    width: 0.1px;
+    z-index: 100;
+    height: 10000px;
+}
